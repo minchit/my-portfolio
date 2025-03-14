@@ -1,9 +1,9 @@
-# TechTim's Astro Bento Portfolio
+# Min Chit's Portfolio
 
-This template helps you build a portfolio using Astro, Typescript, React, Tailwind CSS, and Shadcn UI.
+This is just my portfolio
 
 
-- [GitHub Repo](https://github.com/tim-hub/techtim-astro-bento-portfol)
+
 
 ## Technologies Used
 
@@ -15,45 +15,6 @@ This project utilizes the following technologies:
 - **React**: For interactive components and advanced functionality.
 - **TypeScript**: For static type checking and improved developer experience.
 
-## Requirements
-
-Before starting, make sure you have the following requirements installed:
-
-- Node.js (version 18 or higher)
-- pnpm (version 8 or higher)
-
-## Installation
-
-To install and run the project locally, follow these steps:
-
-1. Clone this repository:
-
-   ```bash
-   git clone https://github.com/tim-hub/techtim-astro-bento-portfolio
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd techtim-astro-bento-portfolio
-   ```
-
-3. Install the dependencies:
-
-   ```bash
-   pnpm install
-   ```
-
-4. Start the development server:
-
-   ```bash
-   pnpm run dev
-   ```
-
-5. Open your browser and visit `http://localhost:4312` to see your portfolio in action.
-6. Config your site
-   1. Edit `src/content/profileData.ts` to add your profile data
-   2. Edit `astro.config.mjs` to change the site information
 
 
 ## Important Considerations
@@ -80,11 +41,7 @@ This project was inspired by several outstanding portfolios. Here are some that 
 - [Bento Like Portfolio](https://github.com/Ladvace/astro-bento-portfolio)
 - [Minimal and bento Portfolio ](https://github.com/bue221/astro-portfolio)
 
-### Differences / Improvements
+Original Theme
+- [GitHub Repo](https://github.com/tim-hub/techtim-astro-bento-portfolio)
 
-- Centralised data management inside one folder
-  - Use Astro recommended [Content Collection](https://docs.astro.build/en/guides/content-collections/) to manage data
-  - `src/content` folder for blog posts, project data and profile data
-  - `src/content/profileData.ts` for general profile data
-- Tags system
-- Simplified Dark/Light mode toggle
+
