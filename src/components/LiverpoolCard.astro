@@ -1,0 +1,38 @@
+---
+import { useState, useEffect } from "react";
+
+// API Example (Replace with a real football API)
+const apiURL = "https://api.football-data.org/v4/teams/64/matches?status=SCHEDULED"; // Replace with a real API
+const apiKey = "0edf31d415fd4131a015147d5b5f9f70"; // Replace with your API Key
+
+const response = await fetch(apiURL, {
+  headers: { "X-Auth-Token": apiKey }, // Some APIs require headers
+});
+const data = await response.json();
+
+// Extract matches (Modify based on the API response)
+const recentResults = data.matches.filter((match) => match.status === "FINISHED").slice(-3);
+const upcomingFixtures = data.matches.filter((match) => match.status === "SCHEDULED").slice(0, 3);
+---
+
+<div class="bg-red-800 text-white p-4 rounded-lg shadow-lg">
+  <h2 class="text-xl font-bold mb-3">Liverpool FC Fixtures</h2>
+
+  <h3 class="font-semibold">Recent Results</h3>
+  <ul>
+    {recentResults.map((match) => (
+      <li class="border-b border-white p-2">
+        {match.homeTeam.name} {match.score.fullTime.home} - {match.score.fullTime.away} {match.awayTeam.name}
+      </li>
+    ))}
+  </ul>
+
+  <h3 class="font-semibold mt-4">Upcoming Fixtures</h3>
+  <ul>
+    {upcomingFixtures.map((match) => (
+      <li class="border-b border-white p-2">
+        {match.homeTeam.name} vs {match.awayTeam.name} ({new Date(match.utcDate).toLocaleDateString()})
+      </li>
+    ))}
+  </ul>
+</div>

@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import IntroCard from '../components/sections/IntroCard.astro'
+import AboutMe from '../components/sections/AboutMe.astro'
+import Techs from '../components/sections/Techs.astro'
+import Tools from '../components/sections/Tools.astro'
+import Industries from '../components/sections/Industries.astro'
+import Card from '../components/Card.astro'
+import TimeZoneCard from '../components/sections/TimeZoneCard.astro'
+import Books from '../components/sections/Books.astro'
+import ExperienceCard from '../components/sections/ExperienceCard.astro'
+import Projects from '../components/sections/Projects.astro'
+import StudyCard from '../components/sections/StudyCard.astro'
+import { PROFILE } from "../content/profileData";
+import BlogCard from '../components/sections/BlogCard.astro'
+import LiverpoolCard from '../components/LiverpoolCard.astro'
+const SITE = PROFILE.site
+---
+
+
+<BaseLayout
+  title={SITE.SEO.title}
+  description={SITE.SEO.description}
+
+>
+  <div
+    slot="loader"
+    class="fixed top-0 right-0 bottom-0 left-0 z-50 flex h-screen w-screen items-center justify-center text-3xl font-black uppercase text-neutral-50 loader bg-darkslate-700"
+  >
+  </div>
+  <main
+    transition:animate="fade"
+    class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-12 lg:gap-4"
+  >
+    <Card colSpan="lg:col-span-9 md:col-span-2" rowSpan="md:row-span-1 lg:row-span-3">
+      <IntroCard/>
+    </Card>
+
+
+
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-3 lg:row-span-2" title="About me">
+      <AboutMe/>
+    </Card>
+
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-3 lg:row-span-1" title="Industries">
+      <Industries/>
+    </Card>
+  
+
+
+
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-3 lg:row-span-2" title="Experiences">
+      <ExperienceCard/>
+    </Card>
+
+    <!--
+      Clock
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2" title="Your time">
+      <TimeZoneCard/>
+    </Card>
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2" title="My time">
+      <TimeZoneCard timezone={PROFILE.timezone} />
+    </Card>-->
+
+
+    <!--  Words Part
+    <Card colSpan="lg:col-span-4 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2">
+      <div class="flex h-full flex-col justify-between">
+        <blockquote class="mt-6 border-l-2 pl-6 italic">
+          {PROFILE.words.map((quote, index) => (
+        <p key={index} class="mb-2">“{quote}”</p>
+      ))}
+        </blockquote>
+        <p class="mt-2 text-xs"></p>
+      </div>
+    </Card>-->
+
+    <Card colSpan="md:col-span-1 lg:col-span-6" rowSpan="md:row-span-1 lg:row-span-2">
+      <div class="flex h-full flex-col justify-between">
+        <blockquote class="mt-6 border-l-2 pl-6 italic">
+          {PROFILE.words.map((quote, index) => (
+        <p key={index} class="mb-2">“{quote}”</p>
+      ))}
+        </blockquote>
+        <p class="mt-2 text-xs"></p>
+      </div>
+    </Card>
+
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-3 lg:row-span-4" title="Tools and Techs">
+      <Techs/>
+    </Card>
+
+    <!-- Education
+    <Card colSpan="md:col-span-1 lg:col-span-5" rowSpan="md:row-span-2 lg:row-span-2"
+          title="Education and Certificates">
+      <StudyCard/>
+    </Card>
+    -->
+
+    <Card colSpan="md:col-span-2 lg:col-span-5" rowSpan="md:row-span-2 lg:row-span-2"
+          title="Education and Certificates">
+      <StudyCard/>
+    </Card>
+
+    <Card colSpan="md:col-span-1 lg:col-span-4" rowSpan="md:row-span-2 lg:row-span-2" title="Projects">
+      <Projects/>
+    </Card>
+    <!--
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-4" title="Projects">
+      <Projects/>
+    </Card>
+    -->
+
+
+    <!--<Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-4" title="About me">
+      <AboutMe/>
+    </Card>-->
+
+    <Card colSpan="md:col-span-1 lg:col-span-5" rowSpan="md:row-span-1 lg:row-span-3" title="Blog Posts">
+      <BlogCard/>
+    </Card>
+
+    <Card colSpan="md:col-span-1 lg:col-span-4" rowSpan="md:row-span-1 lg:row-span-3" title="">
+      <LiverpoolCard />
+    </Card>
+
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-3" title="Books I read">
+      <Books/>
+    </Card>
+    
+    <Card colSpan="md:col-span-1 lg:col-span-12" rowSpan="md:row-span-2 lg:row-span-1" title="">
+      <div class="flex h-full w-full items-center justify-center text-center text-sm">
+       
+        <i>
+          <a href="https://www.linkedin.com/in/min-chit-paing-thein/details/recommendations/">LinkedIn Recommendations </a> <br/>
+          © 2025 Min Chit – "You Will Never Walk Alone."
+          
+        </i>
+      </div>
+    </Card>
+
+
+  </main>
+</BaseLayout>
+
+<!--<script>-->
+<!--  // JS for animating the cards-->
+<!--  import { stagger, spring, timeline, type TimelineDefinition } from 'motion'-->
+<!--  import { loaderAnimation } from '../lib/constants'-->
+
+<!--  const cards = document.querySelectorAll('.card-animate')-->
+
+<!--  const sequence = [-->
+<!--    loaderAnimation,-->
+<!--    [-->
+<!--      cards,-->
+<!--      {y: ['40%', '0%'], opacity: [0, 1]},-->
+<!--      {-->
+<!--        at: '-0.1',-->
+<!--        duration: 0.2,-->
+<!--        delay: stagger(0.1),-->
+<!--        easing: spring({velocity: 200, stiffness: 50, damping: 10}),-->
+<!--      },-->
+<!--    ],-->
+<!--  ]-->
+
+<!--  timeline(sequence as TimelineDefinition)-->
+<!--</script>-->

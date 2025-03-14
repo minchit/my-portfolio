@@ -1,0 +1,54 @@
+---
+import { getAndGroupUniqueTags } from "../../lib/utils";
+import { PROFILE } from "../../content/profileData";
+
+
+const tagsMap = await getAndGroupUniqueTags();
+
+const skills = PROFILE.skills;
+const industries = PROFILE.industries;
+---
+
+<div class="flex flex-col gap-2 animate-appear">
+    <p class="text-sm font-light mb-1">
+    {PROFILE.industry_headline}
+  </p>
+
+
+
+  <hr/>
+
+  
+
+  <p class="text-sm font-light">
+    Had been in those industries:
+  </p>
+  <ul class="list-inside list-disc">
+    {
+      industries.map((industry) => {
+        if (tagsMap.has(industry)) {
+          return (
+
+            <li>
+              <a href=`/tags/${industry}` class=" hover:font-bold">
+                {industry}
+              </a>
+            </li>
+          )
+        } else {
+          return (
+            <li>
+              <span>
+                {industry}
+              </span>
+            </li>
+          )
+        }
+
+      })
+    }
+  </ul>
+
+
+</div>
+

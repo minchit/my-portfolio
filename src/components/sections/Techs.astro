@@ -1,0 +1,214 @@
+---
+import { getAndGroupUniqueTags } from "../../lib/utils";
+import { PROFILE } from "../../content/profileData";
+
+
+const tagsMap = await getAndGroupUniqueTags();
+
+const db_skills = PROFILE.db_skills;
+const aws_skills = PROFILE.aws_skills;
+const azure_skills = PROFILE.azure_skills;
+const industries = PROFILE.industries;
+const sys_skills = PROFILE.sys_skills;
+const dev_skills = PROFILE.dev_skills;
+const pjm_skills = PROFILE.pjm_skills;
+---
+
+<div class="flex flex-col gap-2 animate-appear">
+  
+
+  <hr/>
+
+  <p class="text-sm font-light">
+    AWS:
+  </p>
+  <ul class="list-inside list-disc">
+    {
+      aws_skills.map((skill) => {
+        if (tagsMap.has(skill)) {
+          return (
+
+            <li>
+              <a href=`/tags/${skill}` class=" hover:font-bold">
+                {skill}
+              </a>
+            </li>
+          )
+        } else {
+          return (
+            <li>
+              <span>
+                {skill}
+              </span>
+            </li>
+          )
+        }
+
+      })
+    }
+  </ul>
+
+ <hr/>
+
+  <p class="text-sm font-light">
+    Azure:
+  </p>
+  <ul class="list-inside list-disc">
+    {
+      azure_skills.map((skill) => {
+        if (tagsMap.has(skill)) {
+          return (
+
+            <li>
+              <a href=`/tags/${skill}` class=" hover:font-bold">
+                {skill}
+              </a>
+            </li>
+          )
+        } else {
+          return (
+            <li>
+              <span>
+                {skill}
+              </span>
+            </li>
+          )
+        }
+
+      })
+    }
+  </ul>
+
+
+
+<hr/>
+
+  <p class="text-sm font-light">
+    Database & Data Engineering:
+  </p>
+  <ul class="list-inside list-disc">
+    {
+      db_skills.map((skill) => {
+        if (tagsMap.has(skill)) {
+          return (
+
+            <li>
+              <a href=`/tags/${skill}` class=" hover:font-bold">
+                {skill}
+              </a>
+            </li>
+          )
+        } else {
+          return (
+            <li>
+              <span>
+                {skill}
+              </span>
+            </li>
+          )
+        }
+
+      })
+    }
+  </ul>
+
+
+
+<hr/>
+
+  <p class="text-sm font-light">
+    System & Middleware:
+  </p>
+  <ul class="list-inside list-disc">
+    {
+      sys_skills.map((skill) => {
+        if (tagsMap.has(skill)) {
+          return (
+
+            <li>
+              <a href=`/tags/${skill}` class=" hover:font-bold">
+                {skill}
+              </a>
+            </li>
+          )
+        } else {
+          return (
+            <li>
+              <span>
+                {skill}
+              </span>
+            </li>
+          )
+        }
+
+      })
+    }
+  </ul>
+
+
+
+<hr/>
+
+  <p class="text-sm font-light">
+    Web & Development:
+  </p>
+  <ul class="list-inside list-disc">
+    {
+      dev_skills.map((skill) => {
+        if (tagsMap.has(skill)) {
+          return (
+
+            <li>
+              <a href=`/tags/${skill}` class=" hover:font-bold">
+                {skill}
+              </a>
+            </li>
+          )
+        } else {
+          return (
+            <li>
+              <span>
+                {skill}
+              </span>
+            </li>
+          )
+        }
+
+      })
+    }
+  </ul>
+
+
+
+  <hr/>
+
+  <p class="text-sm font-light">
+    Project & Issue Management:
+  </p>
+  <ul class="list-inside list-disc">
+    {
+      pjm_skills.map((skill) => {
+        if (tagsMap.has(skill)) {
+          return (
+
+            <li>
+              <a href=`/tags/${skill}` class=" hover:font-bold">
+                {skill}
+              </a>
+            </li>
+          )
+        } else {
+          return (
+            <li>
+              <span>
+                {skill}
+              </span>
+            </li>
+          )
+        }
+
+      })
+    }
+  </ul>
+</div>
+

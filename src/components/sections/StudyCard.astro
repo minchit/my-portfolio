@@ -1,0 +1,44 @@
+---
+import Card from '../Card.astro'
+import { Badge } from '../ui/badge'
+import { shuffleArray } from "../../lib/utils";
+import { PROFILE } from "../../content/profileData";
+
+
+
+
+
+shuffleArray(PROFILE.studies)
+---
+
+
+
+
+<div class="mt-2 flex w-full flex-wrap items-center justify-left gap-2">
+  {
+    PROFILE.studies.map((study) => {
+        // Precompute the emoji before JSX rendering
+        let emoji = "🏆"; // Default for "Certification"
+        if (study.level === "Degree") emoji = "🎓";
+        if (study.level === "Professional Certification") emoji = "📜";
+
+        return (
+          <div class="flex flex-col items-left">
+            <Badge variant="outline">
+              <a href={study.href} target="_blank" rel="noopener noreferrer" 
+                 class="hover:underline group relative flex items-left gap-2">
+                
+                <!-- Emoji Precomputed Before JSX -->
+                <span class="inline-block">{emoji}</span>
+
+                {study.title}
+              </a>
+            </Badge>
+            {study.level && study.institute && (
+              <p class="text-sm text-gray-400">{study.level} - {study.institute}</p>
+            )}
+          </div>
+        );
+      })
+  }
+</div>
