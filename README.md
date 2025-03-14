@@ -16,18 +16,6 @@ This project utilizes the following technologies:
 - **TypeScript**: For static type checking and improved developer experience.
 
 
-
-## Important Considerations
-
-- **Accessibility**: Ensure your portfolio is accessible to all users, including those with disabilities.
-- **SEO**: Optimize your portfolio for search engines by adding meta tags and relevant content.
-- **Performance**: Use modern web development practices to ensure optimal performance, such as lazy loading images and minimizing CSS/JS.
-- **Responsive Design**: Make sure your portfolio looks good on devices of all sizes, from mobile to desktop screens.
-
-## Contributions
-
-Contributions are welcome! If you have ideas or improvements, please open an issue or submit a pull request.
-
 ## License
 
 - This source codes are licensed under the [MIT License](LICENSE).
@@ -43,5 +31,6 @@ This project was inspired by several outstanding portfolios. Here are some that 
 
 Original Theme
 - [GitHub Repo](https://github.com/tim-hub/techtim-astro-bento-portfolio)
+Thank you Tim Hub for wonderful Theme.
 
 
