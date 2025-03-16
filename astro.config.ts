@@ -5,12 +5,24 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://tehctim42.com',
+  output: 'static',
+
+  site: 'https://www.minchit.com',
   integrations: [
     react(),
     tailwind({
-      applyBaseStyles: false,
+      applyBaseStyles: true, // ✅ Ensure this is set to true
     }),
     mdx(),
   ],
+  vite: {
+    build: {
+      assetsInlineLimit: 0, // ✅ Force external asset generation
+    },
+    resolve: {
+      alias: {
+        "/_astro/": "/assets/",
+      },
+    },
+  },
 });

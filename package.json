@@ -1,6 +1,6 @@
 {
-  "site": "https://techtim42.com",
-  "id": "TechTim42",
+  "site": "https://www.minchit.com",
+  "id": "minchit",
   "name": "minchit",
   "version": "1.0.0",
   "fullName": "Min Chit Paing Thein",
@@ -9,6 +9,9 @@
     "name": "Min Chit",
     "url": "https://www.minchit.com"
   },
+
+
+  
   "repository": {
     "type": "git",
     "url": "https://github.com/tim-hub/techtim-astro-bento-portfolio"
@@ -32,7 +35,8 @@
     "dev": "astro dev",
     "format": "prettier -w . --cache",
     "preview": "astro preview",
-    "start": "astro dev"
+    "start": "astro dev",
+    "deploy": "aws s3 sync ./dist s3://mcpt.com --delete"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.5",
